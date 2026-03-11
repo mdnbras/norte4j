@@ -26,10 +26,10 @@ const CmsPartners = () => {
     if (!name) { toast.error("Preencha o nome"); return; }
     try {
       if (editing) {
-        await partnersApi.update(editing.id, { name, description });
+        await partnersApi.update(editing.id, { name, description, link: link || undefined });
         toast.success("Parceiro atualizado!");
       } else {
-        await partnersApi.create({ name, description });
+        await partnersApi.create({ name, description, link: link || undefined });
         toast.success("Parceiro adicionado!");
       }
       close(); load();
