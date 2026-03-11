@@ -12,7 +12,7 @@ const photos = [
 ];
 
 const GallerySection = () => (
-  <section id="eventos" className="py-24 bg-background">
+  <section id="galeria" className="py-24 bg-background">
     <div className="container mx-auto px-6">
       <motion.div
         className="text-center mb-12"
