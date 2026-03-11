@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Users, Code, Lightbulb } from "lucide-react";
 
 const AboutSection = () => (
-  <section className="py-24 bg-muted/50">
+  <section id="sobre" className="py-24 bg-muted/50">
     <div className="container mx-auto px-6">
       <div className="max-w-3xl mx-auto text-center">
         <motion.h2
