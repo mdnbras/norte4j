@@ -12,24 +12,24 @@ const events = [
     description: "Nosso primeiro encontro presencial com palestras sobre Spring Boot, Kotlin e arquitetura de software.",
     status: "upcoming" as const,
   },
-  {
-    title: "Workshop Kotlin para Android",
-    slug: "workshop-kotlin-android",
-    date: "Em breve",
-    time: "A definir",
-    location: "Belém — PA",
-    description: "Hands-on de desenvolvimento mobile com Kotlin, Jetpack Compose e boas práticas.",
-    status: "soon" as const,
-  },
-  {
-    title: "Hackathon Norte4j",
-    slug: "hackathon-norte4j",
-    date: "Em breve",
-    time: "A definir",
-    location: "Belém — PA",
-    description: "Maratona de programação com desafios reais usando tecnologias Java e Kotlin.",
-    status: "soon" as const,
-  },
+  // {
+  //   title: "Workshop Kotlin para Android",
+  //   slug: "workshop-kotlin-android",
+  //   date: "Em breve",
+  //   time: "A definir",
+  //   location: "Belém — PA",
+  //   description: "Hands-on de desenvolvimento mobile com Kotlin, Jetpack Compose e boas práticas.",
+  //   status: "soon" as const,
+  // },
+  // {
+  //   title: "Hackathon Norte4j",
+  //   slug: "hackathon-norte4j",
+  //   date: "Em breve",
+  //   time: "A definir",
+  //   location: "Belém — PA",
+  //   description: "Maratona de programação com desafios reais usando tecnologias Java e Kotlin.",
+  //   status: "soon" as const,
+  // },
 ];
 
 const EventsSection = () => (
