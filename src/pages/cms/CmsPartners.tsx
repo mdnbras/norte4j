@@ -18,8 +18,8 @@ const CmsPartners = () => {
   const load = () => partnersApi.getAll().then(setPartners);
   useEffect(() => { load(); }, []);
 
-  const openCreate = () => { setEditing(null); setName(""); setDescription(""); setCreating(true); };
-  const openEdit = (p: Partner) => { setCreating(false); setEditing(p); setName(p.name); setDescription(p.description); };
+  const openCreate = () => { setEditing(null); setName(""); setDescription(""); setLink(""); setCreating(true); };
+  const openEdit = (p: Partner) => { setCreating(false); setEditing(p); setName(p.name); setDescription(p.description); setLink(p.link || ""); };
   const close = () => { setCreating(false); setEditing(null); };
 
   const handleSave = async () => {
