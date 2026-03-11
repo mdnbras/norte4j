@@ -35,7 +35,7 @@ const Header = () => {
       <div className="container mx-auto px-6 flex items-center justify-between h-16">
         <a href="#" className="flex items-center gap-2">
           <img src={logo} alt="Norte4j" className="w-8 h-8" />
-          <span className="font-display font-bold text-lg text-foreground">Norte4j</span>
+          <span className={`font-display font-bold text-lg transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>Norte4j</span>
         </a>
 
         {/* Desktop nav */}
