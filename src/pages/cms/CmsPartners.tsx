@@ -87,7 +87,13 @@ const CmsPartners = () => {
         {partners.map((p) => (
           <div key={p.id} className="bg-card rounded-xl border border-border p-6 shadow-card">
             <h3 className="font-display font-bold text-foreground mb-2">{p.name}</h3>
-            <p className="text-sm text-muted-foreground mb-4">{p.description}</p>
+            <p className="text-sm text-muted-foreground mb-2">{p.description}</p>
+            {p.link && (
+              <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 mb-4">
+                <ExternalLink className="w-3 h-3" /> {p.link}
+              </a>
+            )}
+            {!p.link && <div className="mb-4" />}
             <div className="flex gap-2">
               <button onClick={() => openEdit(p)} className="text-muted-foreground hover:text-foreground"><Pencil className="w-4 h-4" /></button>
               <button onClick={() => handleDelete(p.id)} className="text-muted-foreground hover:text-destructive"><Trash2 className="w-4 h-4" /></button>
