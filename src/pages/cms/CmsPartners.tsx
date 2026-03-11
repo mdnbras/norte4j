@@ -13,6 +13,7 @@ const CmsPartners = () => {
   const [creating, setCreating] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [link, setLink] = useState("");
 
   const load = () => partnersApi.getAll().then(setPartners);
   useEffect(() => { load(); }, []);
