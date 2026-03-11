@@ -39,6 +39,7 @@ export interface Partner {
   id: string;
   name: string;
   description: string;
+  link?: string;
 }
 
 export interface SiteText {
@@ -95,8 +96,8 @@ const seedGallery: GalleryPhoto[] = [
 ];
 
 const seedPartners: Partner[] = [
-  { id: "1", name: "Studio Code", description: "Empresa de tecnologia parceira na organização e apoio logístico dos eventos." },
-  { id: "2", name: "DEVs Norte", description: "Comunidade de desenvolvedores da Região Norte que impulsiona o ecossistema tech local." },
+  { id: "1", name: "Studio Code", description: "Empresa de tecnologia parceira na organização e apoio logístico dos eventos.", link: "https://studiocode.com" },
+  { id: "2", name: "DEVs Norte", description: "Comunidade de desenvolvedores da Região Norte que impulsiona o ecossistema tech local.", link: "https://devsnorte.com" },
 ];
 
 const seedTexts: SiteText[] = [

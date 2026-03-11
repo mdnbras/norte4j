@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Plus, Pencil, Trash2, X } from "lucide-react";
+import { Plus, Pencil, Trash2, X, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
 
 const CmsPartners = () => {
@@ -13,22 +13,23 @@ const CmsPartners = () => {
   const [creating, setCreating] = useState(false);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [link, setLink] = useState("");
 
   const load = () => partnersApi.getAll().then(setPartners);
   useEffect(() => { load(); }, []);
 
-  const openCreate = () => { setEditing(null); setName(""); setDescription(""); setCreating(true); };
-  const openEdit = (p: Partner) => { setCreating(false); setEditing(p); setName(p.name); setDescription(p.description); };
+  const openCreate = () => { setEditing(null); setName(""); setDescription(""); setLink(""); setCreating(true); };
+  const openEdit = (p: Partner) => { setCreating(false); setEditing(p); setName(p.name); setDescription(p.description); setLink(p.link || ""); };
   const close = () => { setCreating(false); setEditing(null); };
 
   const handleSave = async () => {
     if (!name) { toast.error("Preencha o nome"); return; }
     try {
       if (editing) {
-        await partnersApi.update(editing.id, { name, description });
+        await partnersApi.update(editing.id, { name, description, link: link || undefined });
         toast.success("Parceiro atualizado!");
       } else {
-        await partnersApi.create({ name, description });
+        await partnersApi.create({ name, description, link: link || undefined });
         toast.success("Parceiro adicionado!");
       }
       close(); load();
@@ -70,6 +71,10 @@ const CmsPartners = () => {
               <Label>Descrição</Label>
               <Textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} />
             </div>
+            <div className="space-y-2">
+              <Label>Link (opcional)</Label>
+              <Input value={link} onChange={(e) => setLink(e.target.value)} placeholder="https://..." />
+            </div>
           </div>
           <div className="flex gap-3 mt-4">
             <Button onClick={handleSave}>{editing ? "Salvar" : "Criar"}</Button>
@@ -82,7 +87,13 @@ const CmsPartners = () => {
         {partners.map((p) => (
           <div key={p.id} className="bg-card rounded-xl border border-border p-6 shadow-card">
             <h3 className="font-display font-bold text-foreground mb-2">{p.name}</h3>
-            <p className="text-sm text-muted-foreground mb-4">{p.description}</p>
+            <p className="text-sm text-muted-foreground mb-2">{p.description}</p>
+            {p.link && (
+              <a href={p.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 mb-4">
+                <ExternalLink className="w-3 h-3" /> {p.link}
+              </a>
+            )}
+            {!p.link && <div className="mb-4" />}
             <div className="flex gap-2">
               <button onClick={() => openEdit(p)} className="text-muted-foreground hover:text-foreground"><Pencil className="w-4 h-4" /></button>
               <button onClick={() => handleDelete(p.id)} className="text-muted-foreground hover:text-destructive"><Trash2 className="w-4 h-4" /></button>
