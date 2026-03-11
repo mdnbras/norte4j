@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar, MapPin, Clock } from "lucide-react";
-import logo from "@/assets/norte4j-logo.png";
+import logo from "@/assets/logo2.png";
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center justify-center gradient-hero overflow-hidden">
@@ -41,7 +41,7 @@ const HeroSection = () => (
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
       >
-        Java & Kotlin Community — Região Norte
+        Java & Kotlin Community
       </motion.p>
 
       {/* Meetup CTA */}
