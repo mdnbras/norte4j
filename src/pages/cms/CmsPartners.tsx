@@ -71,6 +71,10 @@ const CmsPartners = () => {
               <Label>Descrição</Label>
               <Textarea value={description} onChange={(e) => setDescription(e.target.value)} rows={3} />
             </div>
+            <div className="space-y-2">
+              <Label>Link (opcional)</Label>
+              <Input value={link} onChange={(e) => setLink(e.target.value)} placeholder="https://..." />
+            </div>
           </div>
           <div className="flex gap-3 mt-4">
             <Button onClick={handleSave}>{editing ? "Salvar" : "Criar"}</Button>
