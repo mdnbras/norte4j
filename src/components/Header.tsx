@@ -4,10 +4,10 @@ import { Menu, X, Moon, Sun } from "lucide-react";
 // import logo from "@/assets/logo.png";
 
 const navItems = [
-  { label: "Inscrição", href: "#meetup" },
+  { label: "Inscrição", href: "#hero" },
   { label: "Eventos", href: "#eventos" },
-  { label: "Galeria", href: "#galeria" },
-  { label: "Parcerias", href: "#parcerias" },
+  // { label: "Galeria", href: "#galeria" },
+  { label: "Parceiros", href: "#parcerias" },
   { label: "Sobre", href: "#sobre" },
 ];
 
@@ -49,24 +49,24 @@ const Header = () => {
               {item.label}
             </a>
           ))}
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className={`ml-2 p-2 rounded-lg transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}
-            aria-label="Alternar tema"
-          >
-            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
+          {/*<button*/}
+          {/*  onClick={() => setIsDark(!isDark)}*/}
+          {/*  className={`ml-2 p-2 rounded-lg transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}*/}
+          {/*  aria-label="Alternar tema"*/}
+          {/*>*/}
+          {/*  {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}*/}
+          {/*</button>*/}
         </nav>
 
         {/* Mobile toggle */}
         <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={() => setIsDark(!isDark)}
-            className={`p-2 rounded-lg transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}
-            aria-label="Alternar tema"
-          >
-            {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
+          {/*<button*/}
+          {/*  onClick={() => setIsDark(!isDark)}*/}
+          {/*  className={`p-2 rounded-lg transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}*/}
+          {/*  aria-label="Alternar tema"*/}
+          {/*>*/}
+          {/*  {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}*/}
+          {/*</button>*/}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`p-2 rounded-lg transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}

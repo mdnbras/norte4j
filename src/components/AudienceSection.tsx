@@ -50,7 +50,7 @@ const AudienceSection = () => (
           Garanta sua vaga no próximo meetup Norte4j em Belém – PA.
         </p>
         <a
-          href="https://norte4j.com"
+          href="https://www.sympla.com.br/evento/meetup-norte4j---java--kotlin-community/3341647"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-card text-foreground font-bold px-8 py-3.5 rounded-xl hover:shadow-elevated transition-all"

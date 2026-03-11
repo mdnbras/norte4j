@@ -1,11 +1,21 @@
 import { Linkedin, Instagram, Send, MessageCircle } from "lucide-react";
+import WhatsAppLogo from "@/assets/wpp.png";
+import FacebookLogo from "@/assets/facebook.png";
+
+const WhatsAppLogoComponent = () => (
+  <img src={WhatsAppLogo} style={{ width: '24px', height: '24px', filter: "brightness(0) invert(0.7)" }} alt="WhatsApp Logo"/>
+)
+
+const FacebookLogoComponent = () => (
+  <img src={FacebookLogo} style={{ width: '24px', height: '24px', filter: "brightness(0) invert(0.7)" }} alt="Facebook Logo"/>
+)
 
 const socials = [
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/" },
-  { icon: Instagram, label: "Instagram", href: "https://instagram.com/" },
-  { icon: Send, label: "Telegram", href: "https://t.me/" },
-  { icon: MessageCircle, label: "Discord", href: "https://discord.gg/" },
-  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/norte4j/" },
+  // { icon: Instagram, label: "Instagram", href: "https://instagram.com/" },
+  // { icon: Send, label: "Telegram", href: "https://t.me/" },
+  // { icon: FacebookLogoComponent, label: "Discord", href: "https://discord.gg/" },
+  { icon: WhatsAppLogoComponent, label: "WhatsApp", href: "https://chat.whatsapp.com/CEC5j1W4Rcb7vRuRQZ03xj" },
 ];
 
 const FooterSection = () => (
@@ -14,7 +24,7 @@ const FooterSection = () => (
       <div className="flex flex-col items-center gap-6">
         <p className="font-display text-xl font-bold text-primary-foreground">Norte4j</p>
         <p className="text-sm text-primary-foreground/60">
-          Java & Kotlin Community — Região Norte · Belém – PA
+          Java & Kotlin Community — Região Norte
         </p>
 
         <div className="flex items-center gap-3">
@@ -33,7 +43,7 @@ const FooterSection = () => (
         </div>
 
         <p className="text-xs text-primary-foreground/40">
-          Apoio: Studio Code · DEVs Norte
+          &copy; {new Date().getFullYear()} Norte4j. Todos os direitos reservados.
         </p>
       </div>
     </div>

@@ -1,0 +1,17 @@
+name: norte4j-web-infra
+
+services:
+  web:
+    image: daniel101/norte4j-web
+    restart: always
+    ports:
+      - "3006:80"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+

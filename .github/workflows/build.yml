@@ -1,0 +1,93 @@
+name: Build Prod
+on:
+  push:
+    branches:
+      - 'main'
+jobs:
+  caches:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cache multiple paths
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/cache
+            !~/cache/exclude
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+  build:
+    needs: caches
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node 24.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install dependencies
+        run: npm i --force
+      - name: Build
+        run: npm run build
+      - name: Copy folder content of infra
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: infra
+          remote: /root/norte4j
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWD }}
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: daniel101/norte4j-web
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executa comando no servidor para o build
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWD }}
+          port: 22
+          script: |
+            sudo su
+            cd /root/norte4j
+
+            echo "configure apache executing"
+            chmod +x ./configure-apache.sh
+
+            echo "deploying frontend executing"
+            chmod +x ./deploy_frontend.sh
+
+            ./deploy_frontend.sh
+            sleep 5
+            docker ps
+            ./configure-apache.sh &
+      - name: Test Success
+        uses: rjstone/discord-webhook-notify@v1
+        if: success()
+        with:
+          severity: info
+          details: Deploy WEB Succeeded!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+      - name: Test Failure
+        uses: rjstone/discord-webhook-notify@v1
+        if: failure()
+        with:
+          severity: error
+          details: Deploy WEB Failed!
+          webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}

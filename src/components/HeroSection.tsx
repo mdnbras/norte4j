@@ -3,7 +3,7 @@ import { Calendar, MapPin, Clock } from "lucide-react";
 import logo from "@/assets/logo2.png";
 
 const HeroSection = () => (
-  <section className="relative min-h-screen flex items-center justify-center gradient-hero overflow-hidden">
+  <section id="hero" className="relative min-h-screen flex items-center justify-center gradient-hero overflow-hidden">
     {/* Network pattern overlay */}
     <div className="absolute inset-0 opacity-10">
       <svg width="100%" height="100%">
