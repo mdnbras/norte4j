@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Clock, ExternalLink } from "lucide-react";
+import { Calendar, MapPin, Clock, ExternalLink, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const events = [
   {
     title: "1º Meetup Norte4j",
+    slug: "1-meetup-norte4j",
     date: "11/04/2026",
     time: "08:00h",
     location: "Belém — PA",
@@ -12,6 +14,7 @@ const events = [
   },
   {
     title: "Workshop Kotlin para Android",
+    slug: "workshop-kotlin-android",
     date: "Em breve",
     time: "A definir",
     location: "Belém — PA",
@@ -20,6 +23,7 @@ const events = [
   },
   {
     title: "Hackathon Norte4j",
+    slug: "hackathon-norte4j",
     date: "Em breve",
     time: "A definir",
     location: "Belém — PA",
@@ -80,14 +84,12 @@ const EventsSection = () => (
                 <span>{event.location}</span>
               </div>
             </div>
-            {event.status === "upcoming" && (
-              <a
-                href="#meetup"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
-              >
-                Inscreva-se <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-            )}
+            <Link
+              to={`/evento/${event.slug}`}
+              className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+            >
+              Ver detalhes <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </motion.div>
         ))}
       </div>
