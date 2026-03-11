@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Clock, ExternalLink } from "lucide-react";
+import { Calendar, MapPin, Clock, ExternalLink, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const events = [
   {
