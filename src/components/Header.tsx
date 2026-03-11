@@ -35,7 +35,7 @@ const Header = () => {
       <div className="container mx-auto px-6 flex items-center justify-between h-16">
         <a href="#" className="flex items-center gap-2">
           <img src={logo} alt="Norte4j" className="w-8 h-8" />
-          <span className="font-display font-bold text-lg text-foreground">Norte4j</span>
+          <span className={`font-display font-bold text-lg transition-colors ${scrolled ? "text-foreground" : "text-primary-foreground"}`}>Norte4j</span>
         </a>
 
         {/* Desktop nav */}
@@ -44,14 +44,14 @@ const Header = () => {
             <a
               key={item.label}
               href={item.href}
-              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted"
+              className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}
             >
               {item.label}
             </a>
           ))}
           <button
             onClick={() => setIsDark(!isDark)}
-            className="ml-2 p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            className={`ml-2 p-2 rounded-lg transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}
             aria-label="Alternar tema"
           >
             {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -62,14 +62,14 @@ const Header = () => {
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            className={`p-2 rounded-lg transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}
             aria-label="Alternar tema"
           >
             {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            className={`p-2 rounded-lg transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}
             aria-label="Menu"
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
