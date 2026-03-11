@@ -5,7 +5,7 @@ services:
     image: daniel101/norte4j-web
     restart: always
     ports:
-      - "3006:80"
+      - "3007:80"
     deploy:
       resources:
         limits:
