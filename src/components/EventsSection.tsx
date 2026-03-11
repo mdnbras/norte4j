@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const events = [
   {
     title: "1º Meetup Norte4j",
+    slug: "1-meetup-norte4j",
     date: "11/04/2026",
     time: "08:00h",
     location: "Belém — PA",
@@ -13,6 +14,7 @@ const events = [
   },
   {
     title: "Workshop Kotlin para Android",
+    slug: "workshop-kotlin-android",
     date: "Em breve",
     time: "A definir",
     location: "Belém — PA",
@@ -21,6 +23,7 @@ const events = [
   },
   {
     title: "Hackathon Norte4j",
+    slug: "hackathon-norte4j",
     date: "Em breve",
     time: "A definir",
     location: "Belém — PA",
