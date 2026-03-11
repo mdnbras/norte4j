@@ -39,6 +39,7 @@ export interface Partner {
   id: string;
   name: string;
   description: string;
+  link?: string;
 }
 
 export interface SiteText {
