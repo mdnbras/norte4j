@@ -62,7 +62,7 @@ const Header = () => {
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={() => setIsDark(!isDark)}
-            className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+            className={`p-2 rounded-lg transition-colors ${scrolled ? "text-muted-foreground hover:text-foreground hover:bg-muted" : "text-primary-foreground/80 hover:text-primary-foreground"}`}
             aria-label="Alternar tema"
           >
             {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
