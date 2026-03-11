@@ -6,6 +6,7 @@ import logo from "@/assets/norte4j-logo.png";
 const navItems = [
   { label: "Inscrição", href: "#meetup" },
   { label: "Eventos", href: "#eventos" },
+  { label: "Galeria", href: "#galeria" },
   { label: "Parcerias", href: "#parcerias" },
   { label: "Sobre", href: "#sobre" },
 ];
