@@ -1,8 +1,28 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Calendar, MapPin, Clock, ArrowLeft, Users, ExternalLink } from "lucide-react";
+import { Calendar, MapPin, Clock, ArrowLeft, Users, ExternalLink, Linkedin } from "lucide-react";
 import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
+import JoaoPhoto from "@/assets/palestrantes/joao.png";
+import MairtonPhoto from "@/assets/palestrantes/mairton.png";
+import TiagoPhoto from "@/assets/palestrantes/tiago.png";
+import MarceloPhoto from "@/assets/palestrantes/marcelo.png";
+
+const JoaoPhotoView = () => (
+  <img src={JoaoPhoto} />
+)
+
+const MairtonPhotoView = () => (
+  <img src={MairtonPhoto} />
+)
+
+const TiagoPhotoView = () => (
+  <img src={TiagoPhoto} />
+)
+
+const MarceloPhotoView = () => (
+  <img src={MarceloPhoto} />
+)
 
 const eventsData: Record<string, {
   title: string;
@@ -14,13 +34,13 @@ const eventsData: Record<string, {
   longDescription: string;
   status: "upcoming" | "soon";
   topics: string[];
-  speakers: { name: string; role: string; talk: string }[];
+  speakers: { name: string; role: string; talk: string, link: string, photo: () => JSX.Element }[];
   capacity: string;
 }> = {
   "1-meetup-norte4j": {
     title: "1º Meetup Norte4j",
     date: "11/04/2026",
-    time: "08:00h às 17:00h",
+    time: "08:00h às 12:30h",
     location: "Belém — PA",
     address: "Local a confirmar",
     description: "Nosso primeiro encontro presencial com palestras sobre Spring Boot, Kotlin e arquitetura de software.",
@@ -29,11 +49,36 @@ const eventsData: Record<string, {
     status: "upcoming",
     topics: ["Spring Boot", "Kotlin", "Arquitetura de Software", "Microsserviços", "Clean Code", "Testes Automatizados"],
     speakers: [
-      { name: "A confirmar", role: "Palestrante", talk: "Spring Boot na Prática" },
-      { name: "A confirmar", role: "Palestrante", talk: "Kotlin para Backend" },
-      { name: "A confirmar", role: "Palestrante", talk: "Arquitetura Limpa" },
+      {
+        name: "João Antônio",
+        role: "Palestrante",
+        talk: "Testando falhas em microserviços Java: resiliência real com Testcontainers e Resilience4j",
+        link: "https://www.linkedin.com/in/juaoantonio",
+        photo: JoaoPhotoView
+      },
+      {
+        name: "Mairton Leal",
+        role: "Palestrante",
+        talk: "A definir",
+        link: "https://www.linkedin.com/in/project-spiders",
+        photo: MairtonPhotoView
+      },
+      {
+        name: "Tiago Danin",
+        role: "Palestrante",
+        talk: "A definir",
+        link: "https://www.linkedin.com/in/tiagodanin",
+        photo: TiagoPhotoView
+      },
+      {
+        name: "Marcelo Daniel",
+        role: "Palestrante",
+        talk: "A definir",
+        link: "https://www.linkedin.com/in/mdnbras",
+        photo: MarceloPhotoView
+      },
     ],
-    capacity: "100 vagas",
+    capacity: "90 vagas",
   },
   "workshop-kotlin-android": {
     title: "Workshop Kotlin para Android",
@@ -167,12 +212,19 @@ const EventDetails = () => {
                   <div className="grid sm:grid-cols-2 gap-4">
                     {event.speakers.map((speaker, i) => (
                       <div key={i} className="bg-card rounded-xl p-5 border border-border shadow-card">
-                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3">
-                          <Users className="w-6 h-6 text-primary" />
+                        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 overflow-hidden">
+                          { speaker.photo() }
+                          {/*<Users className="w-6 h-6 text-primary" />*/}
                         </div>
                         <h3 className="font-display font-bold text-foreground">{speaker.name}</h3>
                         <p className="text-sm text-muted-foreground">{speaker.role}</p>
                         <p className="text-sm text-primary font-medium mt-2">{speaker.talk}</p>
+
+                        <div className="flex items-center gap-2 mt-4">
+                          <a href={`https://www.linkedin.com/in/${speaker.name.toLowerCase().replace(/\s+/g, '-')}/`}>
+                            <Linkedin className="w-5 h-5 text-primary hover:text-primary/80 transition-colors" />
+                          </a>
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -206,7 +258,8 @@ const EventDetails = () => {
 
                 {event.status === "upcoming" ? (
                   <a
-                    href="#meetup"
+                    href="https://www.sympla.com.br/evento/meetup-norte4j---java--kotlin-community/3341647"
+                    target="_blank"
                     className="w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 py-3 rounded-xl transition-all hover:shadow-elevated text-center"
                   >
                     Inscreva-se <ExternalLink className="w-4 h-4" />
