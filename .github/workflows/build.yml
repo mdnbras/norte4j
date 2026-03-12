@@ -2,7 +2,7 @@ name: Build Prod
 on:
   push:
     branches:
-      - 'main'
+      - 'production'
 jobs:
   caches:
     runs-on: ubuntu-latest
