@@ -13,9 +13,9 @@ rm -rf /etc/apache2/sites-enabled/norte4j.com
 rm -rf /etc/apache2/sites-available/norte4j.com
 
 # apache configuration
-sudo -s cp ./norte4j.com.conf /etc/apache2/sites-available/
+cp ./norte4j.com.conf /etc/apache2/sites-available/
 a2ensite norte4j.com.conf
-sudo -s systemctl restart apache2
+systemctl restart apache2
 
 ## certbot configuration
 
