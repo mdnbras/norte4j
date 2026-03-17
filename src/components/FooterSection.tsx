@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, Send, MessageCircle } from "lucide-react";
+import { Linkedin, Instagram } from "lucide-react";
 import WhatsAppLogo from "@/assets/wpp.png";
 import FacebookLogo from "@/assets/facebook.png";
 
@@ -12,7 +12,7 @@ const FacebookLogoComponent = () => (
 
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/norte4j/" },
-  // { icon: Instagram, label: "Instagram", href: "https://instagram.com/" },
+  { icon: Instagram, label: "Instagram", href: "https://instagram.com/norte4j" },
   // { icon: Send, label: "Telegram", href: "https://t.me/" },
   // { icon: FacebookLogoComponent, label: "Discord", href: "https://discord.gg/" },
   { icon: WhatsAppLogoComponent, label: "WhatsApp", href: "https://chat.whatsapp.com/CEC5j1W4Rcb7vRuRQZ03xj" },
