@@ -7,7 +7,7 @@ const events = [
     title: "1º Meetup Norte4j",
     slug: "1-meetup-norte4j",
     date: "11/04/2026",
-    time: "08:00h",
+    time: "08:00h - 17:00h",
     location: "Belém — PA",
     description: "Nosso primeiro encontro presencial com palestras sobre Spring Boot, Kotlin e arquitetura de software.",
     status: "upcoming" as const,
