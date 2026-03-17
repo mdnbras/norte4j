@@ -22,4 +22,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-k8s
+k8s/
