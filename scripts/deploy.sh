@@ -13,7 +13,7 @@ rm -rf /etc/apache2/sites-enabled/norte4j.com
 rm -rf /etc/apache2/sites-available/norte4j.com
 
 # apache configuration
-chown www-data:www-data ./norte4j.com.conf
+chown -R www-data:www-data ./norte4j.com.conf
 cp ./norte4j.com.conf /etc/apache2/sites-available/
 a2ensite norte4j.com.conf
 systemctl restart apache2
