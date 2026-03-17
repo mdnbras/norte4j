@@ -1,3 +1,5 @@
+echo $USERNAME | sudo -v -S
+
 cd ./infra
 sed -i.bak s#\\\${SERVICE_NAME}#$SERVICE_NAME#g docker-compose.yml
 sed -i.bak s#\\\${IMAGE_VERSION}#$IMAGE_VERSION#g docker-compose.yml
