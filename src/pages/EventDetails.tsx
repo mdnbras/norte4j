@@ -7,6 +7,9 @@ import JoaoPhoto from "@/assets/palestrantes/joao.png";
 import MairtonPhoto from "@/assets/palestrantes/mairton.png";
 import TiagoPhoto from "@/assets/palestrantes/tiago.png";
 import MarceloPhoto from "@/assets/palestrantes/marcelo.png";
+import RafaelHenriquePhoto from "@/assets/palestrantes/rafael_henrique.png";
+import RafaelCardosoPhoto from "@/assets/palestrantes/rafael_cardoso.png";
+import RodrigoPhoto from "@/assets/palestrantes/rodrigo.png";
 
 const JoaoPhotoView = () => (
   <img src={JoaoPhoto} />
@@ -22,6 +25,18 @@ const TiagoPhotoView = () => (
 
 const MarceloPhotoView = () => (
   <img src={MarceloPhoto} />
+)
+
+const RafaelHenriquePhotoView = () => (
+  <img src={RafaelHenriquePhoto} />
+)
+
+const RafaelCardosoPhotoView = () => (
+  <img src={RafaelCardosoPhoto} />
+)
+
+const RodrigoPhotoView = () => (
+  <img src={RodrigoPhoto} />
 )
 
 const eventsData: Record<string, {
@@ -40,9 +55,9 @@ const eventsData: Record<string, {
   "1-meetup-norte4j": {
     title: "1º Meetup Norte4j",
     date: "11/04/2026",
-    time: "08:00h às 12:30h",
+    time: "08:00h às 17:00h",
     location: "Belém — PA",
-    address: "Local a confirmar",
+    address: "Faci Wyden - Batista Campos",
     description: "Nosso primeiro encontro presencial com palestras sobre Spring Boot, Kotlin e arquitetura de software.",
     longDescription:
       "O 1º Meetup Norte4j é o marco inicial da comunidade Java & Kotlin da Região Norte. Um dia inteiro dedicado a compartilhar conhecimento, networking e fortalecer o ecossistema de tecnologia na Amazônia. Teremos palestras técnicas, workshops práticos e muito espaço para troca de experiências entre desenvolvedores de todos os níveis.",
@@ -77,8 +92,29 @@ const eventsData: Record<string, {
         link: "https://www.linkedin.com/in/mdnbras",
         photo: MarceloPhotoView
       },
+      {
+        name: "Rafael Henrique",
+        role: "Palestrante",
+        talk: "Pipeline pattern: implementando integrações simplificadas no spring",
+        link: "#",
+        photo: RafaelHenriquePhotoView
+      },
+      {
+        name: "Rafael Cardoso",
+        role: "Palestrante",
+        talk: "A definir",
+        link: "#",
+        photo: RafaelCardosoPhotoView
+      },
+      {
+        name: "Rodrigo Silva",
+        role: "Palestrante",
+        talk: "A definir",
+        link: "#",
+        photo: RodrigoPhotoView
+      },
     ],
-    capacity: "90 vagas",
+    capacity: "120 vagas",
   },
   "workshop-kotlin-android": {
     title: "Workshop Kotlin para Android",

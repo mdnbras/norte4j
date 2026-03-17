@@ -1,21 +1,20 @@
 import { Linkedin, Instagram } from "lucide-react";
 import WhatsAppLogo from "@/assets/wpp.png";
-import FacebookLogo from "@/assets/facebook.png";
+import GithubLogo from "@/assets/github.png";
 
 const WhatsAppLogoComponent = () => (
   <img src={WhatsAppLogo} style={{ width: '24px', height: '24px', filter: "brightness(0) invert(0.7)" }} alt="WhatsApp Logo"/>
 )
 
-const FacebookLogoComponent = () => (
-  <img src={FacebookLogo} style={{ width: '24px', height: '24px', filter: "brightness(0) invert(0.7)" }} alt="Facebook Logo"/>
+const GithubLogoComponent = () => (
+  <img src={GithubLogo} style={{ width: '24px', height: '24px', filter: "brightness(0) invert(0.7)" }} alt="Github Logo"/>
 )
 
 const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/norte4j/" },
   { icon: Instagram, label: "Instagram", href: "https://instagram.com/norte4j" },
-  // { icon: Send, label: "Telegram", href: "https://t.me/" },
-  // { icon: FacebookLogoComponent, label: "Discord", href: "https://discord.gg/" },
   { icon: WhatsAppLogoComponent, label: "WhatsApp", href: "https://chat.whatsapp.com/CEC5j1W4Rcb7vRuRQZ03xj" },
+  { icon: GithubLogoComponent, label: "Github", href: "https://github.com/mdnbras/norte4j" },
 ];
 
 const FooterSection = () => (
