@@ -96,8 +96,13 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh "scripts/deploy.sh"
-                cleanWs()
+                withCredentials([string(credentialsId: 'sudo_pass', variable: 'SUDO_PW')]) {
+                    sh '''
+                    echo $SUDO_PW | sudo -v -S
+                    '''
+                    sh "scripts/deploy.sh"
+                    cleanWs()
+                }
             }
         }
 
