@@ -1,29 +1,6 @@
 #!/bin/bash
 set -e
 
-# Uso:
-# ./check_docker_image.sh <imagem> [tag]
-# Exemplo:
-# ./check_docker_image.sh library/nginx latest
-
-IMAGE=$1
-TAG=${2:-latest}
-
-if [ -z "$IMAGE" ]; then
-  echo "Uso: $0 <imagem> [tag]"
-  exit 1
-fi
-
-# Separar namespace e repo
-if [[ "$IMAGE" != *"/"* ]]; then
-  # imagens oficiais ficam no namespace library
-  NAMESPACE="library"
-  REPO="$IMAGE"
-else
-  NAMESPACE=$(echo "$IMAGE" | cut -d'/' -f1)
-  REPO=$(echo "$IMAGE" | cut -d'/' -f2)
-fi
-
 URL="https://hub.docker.com/v2/repositories/daniel101/${SERVICE_NAME}/tags/${IMAGE_VERSION}"
 
 HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
