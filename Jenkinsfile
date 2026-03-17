@@ -21,14 +21,14 @@ pipeline {
     agent any
 
     parameters {
-        choice(name: 'env', choices: ['prod'], description: 'Environment')
+        choice(name: 'env', choices: ['qa', 'prod'], description: 'Environment')
         gitParameter(name: 'BRANCH_TAG', type: 'PT_BRANCH_TAG', description: 'branch/tag to build', sortMode: 'DESCENDING_SMART', quickFilterEnabled: true, branchFilter: 'origin/feat/configure-project-to-open-source')
     }
 
     environment {
         AWS_REGION = "${params.region}"
         SERVICE_NAME = getConfig(params.env, "msName")
-        IMAGE_VERSION = "${params.BRANCH_TAG.startsWith("origin/") ? "v0.0.${env.BUILD_NUMBER}-${params.env}-${params.region}-SNAPSHOT".replace(/\//, "") : "v${params.BRANCH_TAG}"}"
+        IMAGE_VERSION = "${params.BRANCH_TAG.startsWith("origin/") ? "v0.0.${env.BUILD_NUMBER}-${params.env}-SNAPSHOT".replace(/\//, "") : "v${params.BRANCH_TAG}"}"
         MIN_REPLICA = getConfig(params.env, "minReplica")
         MAX_REPLICA = getConfig(params.env, "maxReplica")
         CPU_REQUEST = getConfig(params.env, "cpuRequest")
@@ -61,11 +61,11 @@ pipeline {
             when { equals expected: 'prod', actual: params.env }
             steps {
                 echo 'prod'
-//                 script {
-//                     if (params.BRANCH_TAG.startsWith("origin/")) {
-//                         throw new Exception('You should build a tag instead a branch')
-//                     }
-//                 }
+                script {
+                    if (params.BRANCH_TAG.startsWith("origin/")) {
+                        throw new Exception('You should build a tag instead a branch')
+                    }
+                }
             }
         }
 
@@ -87,19 +87,19 @@ pipeline {
             }
         }
 
-//         stage('Check if image exists') {
-//             when { equals expected: 'prod', actual: params.env }
-//             steps {
-//                 sh "scripts/check-image.sh"
-//             }
-//         }
+        stage('Check if image exists') {
+            when { equals expected: 'prod', actual: params.env }
+            steps {
+                sh "scripts/check-image.sh"
+            }
+        }
 
-//         stage('Deploy') {
-//             steps {
-//                 sh "cd k8s; ./deploy-k8s.sh"
-//                 cleanWs()
-//             }
-//         }
+        stage('Deploy') {
+            steps {
+                sh "scripts/deploy.sh"
+                cleanWs()
+            }
+        }
 
     }
 
