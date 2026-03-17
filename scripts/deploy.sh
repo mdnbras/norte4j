@@ -1,6 +1,6 @@
 cd ./infra
-sed -i.bak s#\\\${SERVICE_NAME}#$SERVICE_NAME#g infra/docker-compose.yml
-sed -i.bak s#\\\${IMAGE_VERSION}#$IMAGE_VERSION#g infra/docker-compose.yml
+sed -i.bak s#\\\${SERVICE_NAME}#$SERVICE_NAME#g docker-compose.yml
+sed -i.bak s#\\\${IMAGE_VERSION}#$IMAGE_VERSION#g docker-compose.yml
 
 docker compose down
 docker rmi daniel101/${SERVICE_NAME}:"${IMAGE_VERSION}"
