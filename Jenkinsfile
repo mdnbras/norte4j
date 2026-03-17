@@ -81,7 +81,9 @@ pipeline {
 
         stage('Build and register docker image') {
             steps {
-                sh "scripts/docker-build-push.sh"
+                withDockerRegistry([ credentialsId: "docker-hub-credentials", url: "" ]) {
+                    sh "scripts/docker-build-push.sh"
+                }
             }
         }
 
