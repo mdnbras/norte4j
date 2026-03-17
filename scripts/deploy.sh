@@ -3,7 +3,7 @@ sed -i.bak s#\\\${SERVICE_NAME}#$SERVICE_NAME#g docker-compose.yml
 sed -i.bak s#\\\${IMAGE_VERSION}#$IMAGE_VERSION#g docker-compose.yml
 
 docker compose down
-docker rmi daniel101/${SERVICE_NAME}:"${IMAGE_VERSION}"
+docker rmi daniel101/"${SERVICE_NAME}":"${IMAGE_VERSION}"
 docker compose up -d
 
 sleep 5
