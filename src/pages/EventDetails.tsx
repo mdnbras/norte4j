@@ -102,15 +102,15 @@ const eventsData: Record<string, {
       {
         name: "Rafael Cardoso",
         role: "Palestrante",
-        talk: "A definir",
-        link: "#",
+        talk: "Faculdade não ensina tudo: o que realmente diferencia um desenvolvedor em tempos de IA",
+        link: "https://www.linkedin.com/in/rafaelcardoso11",
         photo: RafaelCardosoPhotoView
       },
       {
         name: "Rodrigo Silva",
         role: "Palestrante",
-        talk: "A definir",
-        link: "#",
+        talk: "Mamãe, perdi a JVM! Java nativo em contextos serverless",
+        link: "https://www.linkedin.com/in/rodrigo-silva-9961a3202",
         photo: RodrigoPhotoView
       },
     ],
