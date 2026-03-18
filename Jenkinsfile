@@ -87,13 +87,6 @@ pipeline {
             }
         }
 
-        stage('Check if image exists') {
-            when { equals expected: 'prod', actual: params.env }
-            steps {
-                sh "scripts/check-image.sh"
-            }
-        }
-
         stage('Deploy') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'sudo_pass', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
