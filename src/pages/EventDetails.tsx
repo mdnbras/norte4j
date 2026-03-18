@@ -79,13 +79,6 @@ const eventsData: Record<string, {
         photo: MairtonPhotoView
       },
       {
-        name: "Tiago Danin",
-        role: "Palestrante",
-        talk: "A definir",
-        link: "https://www.linkedin.com/in/tiagodanin",
-        photo: TiagoPhotoView
-      },
-      {
         name: "Marcelo Daniel",
         role: "Palestrante",
         talk: "A definir",
