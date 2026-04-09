@@ -5,11 +5,11 @@ import Header from "@/components/Header";
 import FooterSection from "@/components/FooterSection";
 import JoaoPhoto from "@/assets/palestrantes/joao.png";
 import MairtonPhoto from "@/assets/palestrantes/mairton.png";
-import TiagoPhoto from "@/assets/palestrantes/tiago.png";
-import MarceloPhoto from "@/assets/palestrantes/marcelo.png";
+import YuriPhoto from "@/assets/palestrantes/yuri.png";
 import RafaelHenriquePhoto from "@/assets/palestrantes/rafael_henrique.png";
 import RafaelCardosoPhoto from "@/assets/palestrantes/rafael_cardoso.png";
 import RodrigoPhoto from "@/assets/palestrantes/rodrigo.png";
+import FernandaPhoto from "@/assets/palestrantes/fernanda.png";
 
 const JoaoPhotoView = () => (
   <img src={JoaoPhoto} />
@@ -19,12 +19,8 @@ const MairtonPhotoView = () => (
   <img src={MairtonPhoto} />
 )
 
-const TiagoPhotoView = () => (
-  <img src={TiagoPhoto} />
-)
-
-const MarceloPhotoView = () => (
-  <img src={MarceloPhoto} />
+const FernandaPhotoView = () => (
+  <img src={FernandaPhoto} />
 )
 
 const RafaelHenriquePhotoView = () => (
@@ -37,6 +33,9 @@ const RafaelCardosoPhotoView = () => (
 
 const RodrigoPhotoView = () => (
   <img src={RodrigoPhoto} />
+)
+const YuriPhotoView = () => (
+  <img src={YuriPhoto} />
 )
 
 const eventsData: Record<string, {
@@ -74,16 +73,16 @@ const eventsData: Record<string, {
       {
         name: "Mairton Leal",
         role: "Palestrante",
-        talk: "A definir",
+        talk: "Do Requisito ao App: Integrações e Análise de Falhas Mobile",
         link: "https://www.linkedin.com/in/project-spiders",
         photo: MairtonPhotoView
       },
       {
-        name: "Marcelo Daniel",
+        name: "Fernanda Ramalho",
         role: "Palestrante",
-        talk: "A definir",
-        link: "https://www.linkedin.com/in/mdnbras",
-        photo: MarceloPhotoView
+        talk: "Além do código: arquitetura, IA e os desafios reais do backend moderno",
+        link: "https://www.linkedin.com/in/fernandaramalho/",
+        photo: FernandaPhotoView
       },
       {
         name: "Rafael Henrique",
@@ -98,6 +97,13 @@ const eventsData: Record<string, {
         talk: "Faculdade não ensina tudo: o que realmente diferencia um desenvolvedor em tempos de IA",
         link: "https://www.linkedin.com/in/rafaelcardoso11",
         photo: RafaelCardosoPhotoView
+      },
+      {
+        name: "Yuri Pimentel",
+        role: "Palestrante",
+        talk: "COHOST: Faculdade não ensina tudo: o que realmente diferencia um desenvolvedor em tempos de IA",
+        link: "https://www.linkedin.com/in/yuri-pimentel-pinto-dev/",
+        photo: YuriPhotoView
       },
       {
         name: "Rodrigo Silva",
