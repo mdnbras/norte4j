@@ -14,7 +14,7 @@ const socials = [
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/norte4j/" },
   { icon: Instagram, label: "Instagram", href: "https://instagram.com/norte4j" },
   { icon: WhatsAppLogoComponent, label: "WhatsApp", href: "https://chat.whatsapp.com/CEC5j1W4Rcb7vRuRQZ03xj" },
-  { icon: GithubLogoComponent, label: "Github", href: "https://github.com/mdnbras/norte4j" },
+  { icon: GithubLogoComponent, label: "Github", href: "https://github.com/norte4j" },
 ];
 
 const FooterSection = () => (
