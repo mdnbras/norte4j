@@ -256,7 +256,7 @@ const EventDetails = () => {
                         <p className="text-sm text-primary font-medium mt-2">{speaker.talk}</p>
 
                         <div className="flex items-center gap-2 mt-4">
-                          <a href={`https://www.linkedin.com/in/${speaker.name.toLowerCase().replace(/\s+/g, '-')}/`}>
+                          <a href={speaker.link} target="_blank">
                             <Linkedin className="w-5 h-5 text-primary hover:text-primary/80 transition-colors" />
                           </a>
                         </div>
