@@ -40,4 +40,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: daniel101/wfm-web:${{ env.IMAGE_VERSION }}
+          tags: daniel101/norte4j-web:${{ env.IMAGE_VERSION }}
