@@ -1,23 +1,33 @@
 import {motion} from "framer-motion";
 import {Computer, Handshake, Heart, TabletSmartphone} from "lucide-react";
+import JetbrainsLogo from "@/assets/jetbrains.svg";
+import DevsNorteLogo from "@/assets/devsnorte.svg";
+import StudioCodeLogo from "@/assets/studiocode.png";
+import PsditLogo from "@/assets/psdit.png";
 
 const partners = [
   {
+    name: "JetBrains",
+    description: "Empresa de desenvolvimento de software que apoia a comunidade com licenças gratuitas e eventos.",
+    icon: () => <img src={JetbrainsLogo} alt="JetBrains" className="w-100 mb-5"/>,
+    url: "https://jetbrains.com"
+  },
+  {
     name: "Studio Code",
     description: "Comunidade de desenvolvedores Mobile da Região Norte.",
-    icon: TabletSmartphone,
+    icon: () => <img src={StudioCodeLogo} alt="Studio Code" className="w-20 rounded-3xl ml-auto mr-auto mb-5"/>,
     url: "https://www.instagram.com/studiocodemobile/"
   },
   {
     name: "Devs Norte",
     description: "Comunidade de desenvolvedores da Região Norte que impulsiona o ecossistema tech local.",
-    icon: Heart,
+    icon: () => <img src={DevsNorteLogo} alt="DevsNorte" className="w-2/3 ml-auto mr-auto mb-5"/>,
     url: "https://devsnorte.com"
   },
   {
     name: "PSD.IT",
     description: "Empresa de consultoria e desenvolvimento de software que apoia a comunidade com palestras e workshops.",
-    icon: Computer,
+    icon: () => <img src={PsditLogo} alt="PSD.IT" className="w-20 ml-auto mr-auto mb-5"/>,
     url: "https://psdit.com.br"
   },
 ];
@@ -39,12 +49,13 @@ const PartnershipsSection = () => (
         viewport={{once: true}}
       >
         <span
-          className="inline-flex items-center gap-2 bg-accent/10 text-accent text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+          className="inline-flex items-center gap-2 bg-accent/10 text-accent text-sm font-semibold px-4 py-1.5 rounded-full mb-4"
+          style={{display: 'none'}}>
           <Handshake className="w-4 h-4"/>
           Parcerias
         </span>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-          Nossos <span className="text-gradient">Parceiros</span>
+          Nossos <span className="text-gradient">Parceiros</span> e <span className="text-gradient">Apoiadores</span>
         </h2>
         <p className="text-muted-foreground mt-3 max-w-xl mx-auto">
           Empresas e comunidades que acreditam no poder da tecnologia na Região Norte.
@@ -62,9 +73,7 @@ const PartnershipsSection = () => (
             viewport={{once: true}}
             transition={{delay: 0.1 * i}}
           >
-            <div className="w-14 h-14 rounded-2xl gradient-hero flex items-center justify-center mx-auto mb-4">
-              <partner.icon className="w-7 h-7 text-primary-foreground"/>
-            </div>
+            <partner.icon/>
             <h3 className="font-display text-xl font-bold text-foreground mb-2">{partner.name}</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{partner.description}</p>
           </motion.div>
