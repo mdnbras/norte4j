@@ -1,9 +1,9 @@
 import {motion} from "framer-motion";
-import {Computer, Handshake, Heart, TabletSmartphone} from "lucide-react";
-import JetbrainsLogo from "@/assets/jetbrains.svg";
-import DevsNorteLogo from "@/assets/devsnorte.svg";
-import StudioCodeLogo from "@/assets/studiocode.png";
-import PsditLogo from "@/assets/psdit.png";
+import {Handshake} from "lucide-react";
+import JetbrainsLogo from "@/assets/parceiros/jetbrains.svg";
+import DevsNorteLogo from "@/assets/parceiros/devsnorte.svg";
+import StudioCodeLogo from "@/assets/parceiros/studiocode.png";
+import PsditLogo from "@/assets/parceiros/psdit.png";
 
 const partners = [
   {
