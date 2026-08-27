@@ -1,14 +1,27 @@
 import { motion } from "framer-motion";
 import { Camera } from "lucide-react";
-import bannerImg from "@/assets/banner_norte4j.png";
+import img1 from "@/assets/eventos/2026_1/1.jpg";
+import img2 from "@/assets/eventos/2026_1/2.jpg";
+import img3 from "@/assets/eventos/2026_1/3.jpg";
+import img4 from "@/assets/eventos/2026_1/4.jpg";
+import img5 from "@/assets/eventos/2026_1/5.jpg";
+import img6 from "@/assets/eventos/2026_1/6.jpg";
+import img7 from "@/assets/eventos/2026_1/7.jpg";
+import img8 from "@/assets/eventos/2026_1/8.jpg";
+import img9 from "@/assets/eventos/2026_1/9.jpg";
+import img10 from "@/assets/eventos/2026_1/10.jpg";
 
 const photos = [
-  { src: bannerImg, alt: "Norte4j Meetup" },
-  { src: bannerImg, alt: "Palestras técnicas" },
-  { src: bannerImg, alt: "Comunidade Norte4j" },
-  { src: bannerImg, alt: "Networking" },
-  { src: bannerImg, alt: "Workshops" },
-  { src: bannerImg, alt: "Evento presencial" },
+  { src: img10, alt: "Norte4j Meetup 1° Evento" },
+  { src: img2, alt: "Norte4j Meetup 1° Evento" },
+  { src: img3, alt: "Norte4j Meetup 1° Evento" },
+  { src: img4, alt: "Norte4j Meetup 1° Evento" },
+  { src: img5, alt: "Norte4j Meetup 1° Evento" },
+  { src: img6, alt: "Norte4j Meetup 1° Evento" },
+  { src: img7, alt: "Norte4j Meetup 1° Evento" },
+  { src: img8, alt: "Norte4j Meetup 1° Evento" },
+  { src: img9, alt: "Norte4j Meetup 1° Evento" },
+  { src: img1, alt: "Norte4j Meetup 1° Evento" },
 ];
 
 const GallerySection = () => (

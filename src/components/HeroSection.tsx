@@ -45,39 +45,39 @@ const HeroSection = () => (
       </motion.p>
 
       {/* Meetup CTA */}
-      <motion.div
-        className="bg-card/95 backdrop-blur-md rounded-2xl p-8 md:p-10 max-w-2xl mx-auto shadow-elevated"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.8 }}
-      >
-        <span className="inline-block bg-accent text-accent-foreground text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">
-          Próximo Meetup
-        </span>
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
-          Meetup Norte4j
-        </h2>
-        <div className="flex flex-wrap justify-center gap-6 text-muted-foreground mb-8">
-          <div className="flex items-center gap-2">
-            <Calendar className="w-5 h-5 text-primary" />
-            <span className="font-medium">11/04/2026</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Clock className="w-5 h-5 text-primary" />
-            <span className="font-medium">08:00h</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-primary" />
-            <span className="font-medium">Belém — PA</span>
-          </div>
-        </div>
-        <a
-          href="#meetup"
-          className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-3.5 rounded-xl transition-all hover:shadow-elevated"
-        >
-          Participação Gratuita — Inscreva-se!
-        </a>
-      </motion.div>
+      {/*<motion.div*/}
+      {/*  className="bg-card/95 backdrop-blur-md rounded-2xl p-8 md:p-10 max-w-2xl mx-auto shadow-elevated"*/}
+      {/*  initial={{ opacity: 0, y: 40 }}*/}
+      {/*  animate={{ opacity: 1, y: 0 }}*/}
+      {/*  transition={{ delay: 0.8 }}*/}
+      {/*>*/}
+      {/*  <span className="inline-block bg-accent text-accent-foreground text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wide">*/}
+      {/*    Próximo Meetup*/}
+      {/*  </span>*/}
+      {/*  <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">*/}
+      {/*    Meetup Norte4j*/}
+      {/*  </h2>*/}
+      {/*  <div className="flex flex-wrap justify-center gap-6 text-muted-foreground mb-8">*/}
+      {/*    <div className="flex items-center gap-2">*/}
+      {/*      <Calendar className="w-5 h-5 text-primary" />*/}
+      {/*      <span className="font-medium">11/04/2026</span>*/}
+      {/*    </div>*/}
+      {/*    <div className="flex items-center gap-2">*/}
+      {/*      <Clock className="w-5 h-5 text-primary" />*/}
+      {/*      <span className="font-medium">08:00h</span>*/}
+      {/*    </div>*/}
+      {/*    <div className="flex items-center gap-2">*/}
+      {/*      <MapPin className="w-5 h-5 text-primary" />*/}
+      {/*      <span className="font-medium">Belém — PA</span>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*  <a*/}
+      {/*    href="#meetup"*/}
+      {/*    className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-3.5 rounded-xl transition-all hover:shadow-elevated"*/}
+      {/*  >*/}
+      {/*    Participação Gratuita — Inscreva-se!*/}
+      {/*  </a>*/}
+      {/*</motion.div>*/}
     </div>
   </section>
 );
